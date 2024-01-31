@@ -1,0 +1,17 @@
+.flex-buttons-container {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    justify-content: flex-end
+}
+
+.modules-button {
+    margin-right: 5px;
+    background-color: grey;
+    border-color: grey;
+    color: white;
+}
+
+.indent-text {
+    margin-left: 25px;
+}

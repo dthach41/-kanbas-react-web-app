@@ -4,31 +4,15 @@
     <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
-
-    <style>
-        .flex-buttons-container {
-            display: flex;
-            flex-direction: row;
-            margin: 15px;
-        }
-
-        .modules-button {
-            margin-right: 15px;
-        }
-
-        .indent-text {
-            margin-left: 25px;
-        }
-
-
-    </style>
 </head>
 
 <body>
-    <!-- Implement buttons Collapse All, View Progress, etc. here -->
-    <div class="flex-buttons-container" style="align-content: right; justify-content: flex-end">
-        <div class="modules-button"><button>Collapse All</button></div>
-        <div class="modules-button"><button>View Progress</button></div>
+    <div class="flex-buttons-container">
+        <div class="btn modules-button">Collapse All</div>
+        <div class="btn modules-button">View Progress</div>
+        <div class="btn modules-button">Publish All <i class="fa fa-check-circle"></i></div>
+        <div class="btn modules-button" style="background-color: red; border-color: red;"><i class="fa fa-plus"></i> Module</div>
+        <div class="btn modules-button"><i class="fa fa-ellipsis-v"></i></div>
     </div>
 
     <!-- List of modules -->
