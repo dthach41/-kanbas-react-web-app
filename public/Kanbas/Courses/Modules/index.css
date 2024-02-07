@@ -6,12 +6,37 @@
 }
 
 .modules-button {
-    margin-right: 5px;
+    margin-right: 7px;
     background-color: grey;
     border-color: grey;
     color: white;
 }
 
+.modules-button-red {
+    margin-right: 10px;
+    background-color: red;
+    border-color: red;
+    color: white;
+}
+
+.modules-button-red:hover {
+    background-color: white;
+    border-color: white;
+    color:black;
+}
+
 .indent-text {
     margin-left: 25px;
+}
+
+.breadcrumb-nav-item {
+    margin-right: 20px;
+    color: red
+}
+
+.breadcrumb-nav-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 15px
 }
