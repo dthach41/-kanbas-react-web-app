@@ -10,6 +10,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.css" rel="stylesheet" />
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </head>
 
 <body>
@@ -38,21 +41,78 @@
         <div class="d-lg-flex flex-column" style="width: 100%;">
 
             <div class="breadcrumb-nav-container">
-                <a href="/Kanbas/Courses/Home/screen_nonav.html">
-                    <div class="breadcrumb-nav-item btn"><i class="fa-solid fa-bars" style="font-size: 24px;"></i></div>
-                </a>
+
+                <div class="breadcrumb-nav-item btn" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#kanbas-nav-dropdown" aria-expanded="false" aria-controls="kanbas-nav-dropdown">
+                    <i class="fa-solid fa-bars" style="font-size: 24px;"></i>
+                </div>
+
+                <div class="collapse" id="kanbas-nav-dropdown" style="width:100%">
+                    <div class="card card-body">
+                        <ul class="wd-kanbas-navigation" style="width: 100%">
+                            <li><a href="http://northeastern.edu">N</a></li>
+                            <li><a href="/Kanbas/Account/Profile/screen.html"><i class="fa fa-user"
+                                        style="color:white"></i>Account</a></li>
+                            <li><a href="/Kanbas/Dashboard/screen.html"><i class="fa fa-tachometer"></i> Dashboard</a>
+                            </li>
+                            <li><a href="/Kanbas/Courses/Home/screen.html"><i
+                                        class="fa fa-book"></i>Courses</a></li>
+                            <li><a href="#"><i class="fa fa-calendar"></i>Calendar</a></li>
+                            <li><a href="#"><i class="fa fa-inbox"></i><br>Inbox</a></li>
+                            <li><a href="#"><i class="fa fa-clock-o"></i>History</a></li>
+                            <li><a href="#"><i class="fa fa-tv"></i>Studio</a></li>
+                            <li><a href="#"><i class="fa fa-creative-commons"></i>Commons</a></li>
+                            <li><a href="#"><i class="fa fa-question-circle"></i><br>Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
 
                 <h5 style="display: flex; margin-top:8px">
                     <div class="breadcrumb-nav-item" style="display: inline;">CS4550.39591.202430</div>> Home
                 </h5>
 
-                <div class="btn modules-button d-none d-sm-block" style="margin-left:auto">
+                <div class="btn modules-button d-none d-sm-block" style="margin-left:auto;">
                     <i class="fa-solid fa-glasses" style="font-size: 24px;"></i> Student View
                 </div>
 
-                <div class="d-sm-none" style="margin-left:auto; margin-right: 20px">
+                <div class="d-sm-none" style="margin-left:auto;">
                     <i class="fa-solid fa-glasses" style="font-size: 24px;"></i>
                 </div>
+
+
+
+                <div class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#courses-nav-dropdown"
+                    aria-expanded="false" aria-controls="courses-nav-dropdown" data-bs-placement="left">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <div class="collapse" id="courses-nav-dropdown" style="width:100%">
+                    <div class="card card-body">
+                        <ul class="wd-navigation">
+                            <ul class="wd-navigation">
+                                <li>
+                                    <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                                </li>
+                                <li class="wd-active">
+                                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                                </li>
+                                <li><a href="http://piazza.com">Piazza</a></li>
+                                <li><a href="#">Zoom</a></li>
+                                <li>
+                                    <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                                </li>
+                                <li><a href="#">Quizzes</a></li>
+                                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                                <li><a href="#">People</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+
+
+
 
             </div>
 
@@ -92,6 +152,8 @@
                             <div class="btn modules-button-red"><i class="fa fa-plus"></i> Module</div>
                             <div class="btn modules-button"><i class="fa fa-ellipsis-v"></i></div>
                         </div>
+
+                        <hr>
 
                         <!-- List of modules -->
                         <ul class="list-group wd-modules">
