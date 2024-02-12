@@ -31,8 +31,8 @@ function App() {
   return (
     <div>
       <Labs />
-      <Kanbas />
-      <HelloWorld />
+      {/* <Kanbas />
+      <HelloWorld /> */}
     </div>
   );
 }
