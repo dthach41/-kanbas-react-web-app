@@ -6,7 +6,7 @@ function add(a: number, b: number) {
 const twoPlusFour = add(2, 4);
 console.log(twoPlusFour);
 
-function Added() {
+function AddedNums() {
     return (
         <>
             <h2>Functions</h2>
@@ -18,7 +18,7 @@ function Added() {
 }
 
 
-export default Added;
+export default AddedNums;
 
 
 
