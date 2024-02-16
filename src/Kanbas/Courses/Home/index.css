@@ -1,0 +1,15 @@
+
+.d-flex .status-btn {
+    margin: 5px;
+    background-color: grey;
+    border-color: grey;
+    color: white;
+    box-shadow: none;
+    text-align: left;
+}
+
+.d-flex .status-btn:hover {
+    border-color: black;
+
+}
+
