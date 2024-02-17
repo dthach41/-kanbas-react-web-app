@@ -5,7 +5,6 @@ import Status from "./status";
 function Home() {
     return (
         <div >
-            <h2>Home</h2>
             <div className="d-flex" >
                 <div style={{ flexGrow: 1 }}>
                     <ModuleList />

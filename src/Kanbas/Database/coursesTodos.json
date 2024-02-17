@@ -1,0 +1,60 @@
+
+[
+    {
+        "course": "CS4550-01",
+        "todos": [
+            {
+                "name": "Grade A1 - ENV + HTML",
+                "points": "100",
+                "date" : "2024-03-21"
+            },
+            {
+                "name": "Grade A2 - CSS + BOOTSTRAP",
+                "points": "100",
+                "date": "2024-02-19"
+            }
+        ]
+    },
+
+    {
+        "course": "DS4300-03",
+        "todos": [
+            {
+                "name": "Todo 1",
+                "points": "25",
+                "date": "2024-05-26"
+            },
+            {
+                "name": "Todo 2",
+                "points": "50",
+                "date": "2024-06-09"
+            },
+            {
+                "name": "Todo 3",
+                "points": "70",
+                "date": "2025-01-19"
+            },
+            {
+                "name": "Todo 4",
+                "points": "50",
+                "date": "2024-07-11"
+            }
+        ]
+    },
+
+    {
+        "course": "FINA3303-01",
+        "todos": [
+            {
+                "name": "Todo 1",
+                "points": "50",
+                "date": "2024-02-21"
+            },
+            {
+                "name": "Todo 2",
+                "points": "100",
+                "date": "2024-06-15"
+            }
+        ]
+    }
+]

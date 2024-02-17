@@ -22,7 +22,7 @@
 }
 
 .wd-kanbas-navigation a {
-    color: white;
+    color: red;
     text-decoration: none;
 }
 
@@ -30,4 +30,12 @@
     color: red;
     font-size: 2em;
     margin-bottom: 5px;
+}
+
+.label-default {
+    color: white;
+}
+
+.label-active {
+    color: red;
 }

@@ -11,7 +11,7 @@ function ModuleList() {
     return (
         <>
             {
-                <div className="flex-buttons-container">
+                <div className="flex-buttons-container" style={{marginTop: "0px"}}>
                     <div className="btn modules-button">Collapse All</div>
                     <div className="btn modules-button">View Progress</div>
                     <div className="btn modules-button">Publish All <FaCheckCircle /> </div>
@@ -20,14 +20,12 @@ function ModuleList() {
                 </div>
             }
             
-            <hr></hr>
+            <hr style={{ marginRight: "15px" }}></hr>
             
-            <ul className="list-group wd-modules">
+            <ul className="list-group wd-modules" style={{marginRight: "15px"}}>
                 {modulesList.map((module) => (
-                    <li
-                        className="list-group-item"
-                        onClick={() => setSelectedModule(module)}>
-                        <div>
+                    <li className="list-group-item" onClick={() => setSelectedModule(module)}>
+                        <div style={{ marginBottom: "10px" }} >
                             <FaEllipsisV className="me-2" />
                             {module.name}
                             <span className="float-end">
@@ -36,6 +34,7 @@ function ModuleList() {
                                 <FaEllipsisV className="ms-2" />
                             </span>
                         </div>
+
                         {selectedModule._id === module._id && (
                             <ul className="list-group">
                                 {module.lessons?.map((lesson) => (
