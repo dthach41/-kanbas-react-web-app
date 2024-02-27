@@ -25,7 +25,7 @@ function Courses() {
                     <div className="breadcrumb-nav-item btn"><HiMiniBars3 className="fs-2" /></div>
 
                 <h5 style={{ display: "flex", marginTop: "8px" }}>
-                    <span className="breadcrumb-nav-item">{course?._id} <FaGreaterThan className="fs-6" style={{ color: "black" }} /> {currentDirectory}</span>
+                    <span className="breadcrumb-nav-item">{course?.number} <FaGreaterThan className="fs-6" style={{ color: "black" }} /> {currentDirectory}</span>
                 </h5>
 
                 <div className="btn modules-button d-none d-sm-block" style={{ marginLeft: "auto", marginRight: "15px" }}>

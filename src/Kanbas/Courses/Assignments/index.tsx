@@ -9,7 +9,7 @@ function Assignments() {
   const { courseId } = useParams();
 
   const assignmentList = assignments.filter(
-    (assignment) => assignment.course === courseId);
+    (assignment) => assignment.courseId === courseId);
   return (
     <>
       <div className="flex-buttons-container" style={{ marginTop: "0px" }}>

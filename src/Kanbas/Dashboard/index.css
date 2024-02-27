@@ -4,3 +4,51 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.p-4 .flex-buttons-container {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    margin-left: 5px;
+    justify-content: flex-start
+}
+
+.flex-buttons-container .add-btn {
+    margin-right: 10px;
+    background-color: grey;
+    border-color: grey;
+    color: white;
+}
+
+.flex-buttons-container .add-btn:hover {
+    border-color: black;
+}
+
+.card-body .del-btn {
+    margin-left: 10px;
+    background-color: red;
+    border-color: red;
+    color: white;
+}
+
+.card-body .del-btn:hover {
+    background-color: white;
+    border-color: white;
+    color: black;
+    border-color: black;
+}
+
+.card-body .edit-btn {
+    margin-left: 10px;
+    background-color: grey;
+    border-color: grey;
+    color: white;
+}
+
+.card-body .edit-btn:hover {
+    border-color: black;
+}
+
+.p-4 .course-add-menu-input {
+    margin-bottom: 10px;
+}

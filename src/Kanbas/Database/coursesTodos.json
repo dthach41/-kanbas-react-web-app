@@ -1,7 +1,7 @@
 
 [
     {
-        "course": "CS4550-01",
+        "courseId": "1",
         "todos": [
             {
                 "name": "Grade A1 - ENV + HTML",
@@ -17,7 +17,7 @@
     },
 
     {
-        "course": "DS4300-03",
+        "courseId": "2",
         "todos": [
             {
                 "name": "Todo 1",
@@ -43,7 +43,7 @@
     },
 
     {
-        "course": "FINA3303-01",
+        "courseId": "3",
         "todos": [
             {
                 "name": "Todo 1",

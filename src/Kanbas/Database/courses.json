@@ -1,24 +1,24 @@
 [
     {
-        "_id": "CS4550-01",
+        "_id": "1",
         "name": "Web Development",
-        "number": "CS4550",
+        "number": "CS4550-01",
         "startDate": "2023-01-10",
         "endDate": "2023-05-15",
         "image": "/images/cs4550.jpg"
     },
     {
-        "_id": "DS4300-03",
+        "_id": "2",
         "name": "Large-Scale Storage",
-        "number": "DS4300",
+        "number": "DS4300-03",
         "startDate": "2023-01-10",
         "endDate": "2023-05-15",
         "image": "/images/ds4300.jpg"
     },
     {
-        "_id": "FINA3303-01",
+        "_id": "3",
         "name": "Investments",
-        "number": "FINA3303",
+        "number": "FINA3303-01",
         "startDate": "2023-01-10",
         "endDate": "2023-05-15",
         "image": "/images/fina3303.jpg"

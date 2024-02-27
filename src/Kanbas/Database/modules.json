@@ -1,6 +1,7 @@
 [
     {
-        "_id": "M101",
+        "_id": "M1-1",
+        "courseId": "1",
         "name": "Week 1 Course Introduction",
         "course": "CS4550-01",
         "lessons": [
@@ -23,7 +24,8 @@
     },
     
     {
-        "_id": "M102",
+        "_id": "M1-2",
+        "courseId": "1",
         "name": "Week 2 - Formatting User Interfaces with HTML",
         "course": "CS4550-01",
         "lessons": [
@@ -45,7 +47,8 @@
         ]
     },
     {
-        "_id": "M103",
+        "_id": "M1-3",
+        "courseId": "1",
         "name": "Week 3 - Styling User Interfaces with CSS",
         "course": "CS4550-01",
         "lessons": [
@@ -70,7 +73,8 @@
 
 
     {
-        "_id": "M201",
+        "_id": "M2-1",
+        "courseId": "2",
         "name": "Introduction",
         "course": "DS4300-03",
         "lessons": [
@@ -92,7 +96,8 @@
         ]
     },
     {
-        "_id": "M202",
+        "_id": "M2-2",
+        "courseId": "2",
         "name": "Key-Value Stores",
         "course": "DS4300-03",
         "lessons": [
@@ -109,7 +114,8 @@
         ]
     },
     {
-        "_id": "M203",
+        "_id": "M2-3",
+        "courseId": "2",
         "name": "Document Databases",
         "course": "DS4300-03",
         "lessons": [
@@ -129,7 +135,8 @@
 
 
     {
-        "_id": "M301",
+        "_id": "M3-1",
+        "courseId": "3",
         "name": "Introduction and Investment Process",
         "course": "FINA3303-01",
         "lessons": [
@@ -141,7 +148,8 @@
         ]
     },
     {
-        "_id": "M302",
+        "_id": "M3-2",
+        "courseId": "3",
         "name": "Asset Classes and Investment Companies",
         "course": "FINA3303-01",
         "lessons": [

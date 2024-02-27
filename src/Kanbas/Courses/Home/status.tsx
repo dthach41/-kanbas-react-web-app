@@ -8,7 +8,7 @@ import { useParams } from "react-router";
 function Status() {
 
     const { courseId } = useParams();
-    const todoList = coursesTodos.filter((courseTodo) => courseTodo.course === courseId);
+    const todoList = coursesTodos.filter((courseTodo) => courseTodo.courseId === courseId);
     
     return (
         <div className="flex-grow-0 me-2 d-none d-lg-block" style={{marginLeft: "25px"}}>
