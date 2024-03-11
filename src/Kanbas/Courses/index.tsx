@@ -10,9 +10,8 @@ import { FaGlasses, FaGreaterThan } from "react-icons/fa";
 import Assignments from "./Assignments";
 
 
-
-
-function Courses() {
+function Courses({ courses: [] }) {
+    
     const { courseId } = useParams();
     const course = courses.find((course) => course._id === courseId);
     const { pathname } = useLocation();

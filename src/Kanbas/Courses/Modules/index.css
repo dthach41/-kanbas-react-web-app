@@ -33,3 +33,23 @@
 .indent-text {
     margin-left: 25px;
 }
+
+.flex-buttons-container .add-button {
+    margin-right: 7px;
+    background-color: grey;
+    border-color: grey;
+    color: white;
+}
+
+.list-group .flex-buttons-container {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    margin-left: 5px;
+    margin-top: 0px;
+    justify-content: flex-start
+}
+
+.list-group .module-menu-input {
+    margin-bottom: 10px;
+}
