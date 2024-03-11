@@ -6,8 +6,9 @@ import { useParams } from "react-router";
 
 function ModuleList() {
     const { courseId } = useParams();
-    const modulesList = modules.filter((module) => module.course === courseId);
+    const modulesList = modules.filter((module) => module.courseId === courseId);
     const [selectedModule, setSelectedModule] = useState(modulesList[0]);
+    
     return (
         <>
             {
