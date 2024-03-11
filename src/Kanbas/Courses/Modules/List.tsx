@@ -7,8 +7,19 @@ import { useParams } from "react-router";
 function ModuleList() {
     const { courseId } = useParams();
     const modulesList = modules.filter((module) => module.courseId === courseId);
+    const [moduleList, setModuleList] = useState<any[]>(modules);
+
     const [selectedModule, setSelectedModule] = useState(modulesList[0]);
+
+    const [module, setModule] = useState({
+        name: "New Module",
+        description: "New Description",
+        courseId: courseId,
+    });
+
     
+
+
     return (
         <>
             {
@@ -24,8 +35,27 @@ function ModuleList() {
             <hr style={{ marginRight: "15px" }}></hr>
 
             <ul className="list-group wd-modules" style={{ marginRight: "15px" }}>
-                {modulesList.map((module) => (
-                    <li className="list-group-item" onClick={() => setSelectedModule(module)}>
+
+                <div className="flex-buttons-container">
+                    <button className="btn add-button" >Add <FaPlus /> </button>
+                </div>
+
+                <input value={module.name} className="form-control module-menu-input"
+                    onChange={(e) => setModule({
+                        ...module, name: e.target.value
+                    })}
+                />
+                <textarea value={module.description} className="form-control module-menu-input"
+                    onChange={(e) => setModule({
+                        ...module, description: e.target.value
+                    })}
+                />
+
+                <hr style={{marginBottom: "25px"}}/>
+
+
+                {modulesList.filter((module) => module.courseId === courseId).map((module, index) => (
+                    <li key={index} className="list-group-item" onClick={() => setSelectedModule(module)}>
                         <div style={{ marginBottom: "10px" }} >
                             <FaEllipsisV className="me-2" />
                             {module.name}

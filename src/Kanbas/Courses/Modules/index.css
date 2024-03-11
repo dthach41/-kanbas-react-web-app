@@ -41,6 +41,10 @@
     color: white;
 }
 
+.flex-buttons-container .add-button:hover {
+    border-color: black;
+}
+
 .list-group .flex-buttons-container {
     display: flex;
     flex-direction: row;
