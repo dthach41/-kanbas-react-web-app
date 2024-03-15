@@ -41,8 +41,23 @@
     color: white;
 }
 
+
 .flex-buttons-container .add-button:hover {
     border-color: black;
+}
+
+.list-group-item .module_small_btn {
+    background-color: black;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.list-group-item .delete-button:hover {
+    color: grey;
 }
 
 .list-group .flex-buttons-container {
