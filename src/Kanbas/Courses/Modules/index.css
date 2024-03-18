@@ -47,12 +47,14 @@
 }
 
 .list-group-item .module_small_btn {
-    background-color: black;
     border: none;
     background-color: transparent;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
+}
+
+.list-group-item .module_small_btn:hover {
+    border-radius: 30%;
+    background-color: lightgrey;
+    margin: 0px;
 }
 
 
