@@ -17,12 +17,26 @@ function ModuleList() {
     const modulesList = modules.filter((module) => module.courseId === courseId);
     const [selectedModule, setSelectedModule] = useState(modulesList[0]);
 
+
+    // const module = useSelector((state: KanbasState) => { state.modulesReducer.module });
+
+    const tempMod = {
+        name: "New Module",
+        description: "New Description",
+        courseId: courseId,
+        _id: 0
+    }
+
+
     const moduleList = useSelector((state: KanbasState) =>
         state.modulesReducer.modules);
+
     const module = useSelector((state: KanbasState) =>
         state.modulesReducer.module);
+    
     const dispatch = useDispatch();
     
+
     return (
         <>
             {
@@ -41,7 +55,7 @@ function ModuleList() {
 
                 {/* Modules Editing Buttons */}
                 <div className="flex-buttons-container">
-                    <button className="btn add-button" onClick={() => dispatch(addModule({ ...module, course: courseId }))}>Add <FaPlus /> </button>
+                    <button className="btn add-button" onClick={() => dispatch(addModule({ ...module, courseId: courseId }))}>Add <FaPlus /> </button>
                     <button className="btn add-button" onClick={() => dispatch(updateModule(module))}>Update <FaPen/> </button>
 
                 </div>
@@ -78,7 +92,7 @@ function ModuleList() {
                                 {/* <FaCheckCircle className="text-success" />
                                 <FaPlusCircle className="ms-2" />
                                 <FaEllipsisV className="ms-2" /> */}
-                                <button className="module_small_btn ms-1" style={{ color: 'red' }} onClick={() => dispatch(deleteModule(module._id))}><FaMinusCircle style={{marginBottom:'3px'}}/> </button>
+                                <button className="module_small_btn ms-1" style={{color: 'red'}} onClick={() => dispatch(deleteModule(module._id))}><FaMinusCircle style={{marginBottom:'3px'}}/> </button>
                                 <button className="module_small_btn ms-2" onClick={() => dispatch(setModule(module))}> <FaPen style={{ marginBottom: '3px' }} /></button>
                             </span>
                         </div>
