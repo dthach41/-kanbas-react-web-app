@@ -62,8 +62,48 @@ function WorkingWithObjects() {
                 })}
                 value={module.name} />
 
-            <h4>Modifying Assingment's Score</h4>
+            <br/>
+            <br/>
+
+            <a href={`${MODULE_URL}/description/${module.description}`}>
+                Update Module Description
+            </a>
+            <br/>
+            <textarea
+                onChange={(e) => setModule({
+                    ...module,
+                    description: e.target.value
+                })}
+                value={module.description} />
+
             
+
+            
+
+
+            <h4>Modifying Assignment's Property</h4>
+            <a href={`${ASSIGNMENT_URL}/score/${assignment.score}`}>
+                Update Assignment score
+            </a>
+            <input type="number"
+                onChange={(e) => setAssignment({
+                    ...assignment,
+                    score: parseInt(e.target.value)
+                })}
+                value={assignment.score} />
+
+            <br/>
+
+            <a href={`${ASSIGNMENT_URL}/completed/${assignment.completed}`}>
+                Update Assignment Completed
+            </a>
+            <input type="checkbox"
+                onChange={(e) => setAssignment({
+                    ...assignment,
+                    completed: e.target.checked
+                })}
+                checked={assignment.completed} />
+
             
             
         </div>
