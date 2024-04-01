@@ -1,7 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 function EncodingParametersInURLs() {
     const [a, setA] = useState(34);
     const [b, setB] = useState(23);
+
+    const [welcome, setWelcome] = useState("");
+    const fetchWelcome = async () => {
+        const response = await axios.get("http://localhost:4000/a5/welcome");
+        setWelcome(response.data);
+    };
+    useEffect(() => {
+        fetchWelcome();
+    }, []);
+
     return (
         <div>
             <h3>Encoding Parameters In URLs</h3>
@@ -28,6 +40,11 @@ function EncodingParametersInURLs() {
                 href={`http://localhost:4000/a5/calculator?operation=subtract&a=${a}&b=${b}`}>
                 Substract {a} - {b}
             </a>
+
+
+            <h4>Integrating React with APIs</h4>
+            <h5>Fetching Welcome</h5>
+            <h6>{welcome}</h6>
 
             
 
