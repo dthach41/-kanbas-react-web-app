@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import { modules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle, FaPlus, FaMinus, FaMinusCircle, FaPen } from "react-icons/fa";
@@ -9,8 +9,10 @@ import {
     deleteModule,
     updateModule,
     setModule,
+    setModules,
 } from "./reducer";
 import { KanbasState } from "../../store";
+import { findModulesForCourse } from "./client";
 
 function ModuleList() {
     const { courseId } = useParams();
@@ -35,6 +37,16 @@ function ModuleList() {
         state.modulesReducer.module);
     
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        findModulesForCourse(courseId + '')
+            .then((modules) =>
+                dispatch(setModules(modules))
+            );
+    }, [courseId]);
+
+
+    
     
 
     return (

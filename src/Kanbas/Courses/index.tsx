@@ -8,15 +8,32 @@ import Home from "./Home";
 import "./index.css";
 import { FaGlasses, FaGreaterThan } from "react-icons/fa";
 import Assignments from "./Assignments";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-
-function Courses({ courses: [] }) {
+function Courses() {
     
     const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
+    // const course = courses.find((course) => course._id === courseId);
     const { pathname } = useLocation();
     const segments = pathname.split('/');
     const currentDirectory = segments[segments.length - 1];
+
+
+    const COURSES_API = "http://localhost:4000/api/courses";
+    const [course, setCourse] = useState<any>({ _id: "" });
+    const findCourseById = async (courseId?: string) => {
+        const response = await axios.get(
+            `${COURSES_API}/${courseId}`
+        );
+        setCourse(response.data);
+    };
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId]);
+
+
+
     return (
         <div>
 

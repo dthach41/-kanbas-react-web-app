@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 function WorkingWithObjects() {
 
     const [assignment, setAssignment] = useState({
@@ -21,6 +23,20 @@ function WorkingWithObjects() {
         { id: 3, title: "Task 3", completed: false },
         { id: 4, title: "Task 4", completed: true },
     ];
+
+    const fetchAssignment = async () => {
+        const response = await axios.get(`${ASSIGNMENT_URL}`);
+        setAssignment(response.data);
+    };
+    const updateTitle = async () => {
+        const response = await axios
+            .get(`${ASSIGNMENT_URL}/title/${assignment.title}`);
+        setAssignment(response.data);
+    };
+    useEffect(() => {
+        fetchAssignment();
+    }, []);
+
 
 
     return (
@@ -84,10 +100,6 @@ function WorkingWithObjects() {
                 })}
                 value={module.description} />
 
-            
-
-            
-
 
             <h4>Modifying Assignment's Property</h4>
             <a href={`${ASSIGNMENT_URL}/score/${assignment.score}`}>
@@ -111,6 +123,21 @@ function WorkingWithObjects() {
                     completed: e.target.checked
                 })}
                 checked={assignment.completed} />
+
+
+
+            
+            <h3 style={{marginTop:'35px'}}>Modifying Properties</h3>
+            <input onChange={(e) => setAssignment({
+                ...assignment, title: e.target.value
+            })}
+                value={assignment.title} type="text" />
+            <button onClick={updateTitle} >
+                Update Title to: {assignment.title}
+            </button>
+            <button onClick={fetchAssignment} >
+                Fetch Assignment
+            </button>
 
             
             
