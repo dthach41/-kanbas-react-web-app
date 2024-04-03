@@ -1,4 +1,4 @@
-import { courses } from "../../Kanbas/Database";
+// import { courses } from "../../Kanbas/Database";
 import { useParams } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
@@ -23,11 +23,11 @@ function Courses() {
     const COURSES_API = "http://localhost:4000/api/courses";
     const [course, setCourse] = useState<any>({ _id: "" });
     const findCourseById = async (courseId?: string) => {
-        const response = await axios.get(
-            `${COURSES_API}/${courseId}`
-        );
+        const response = await axios
+            .get(`${COURSES_API}/${courseId}`);
         setCourse(response.data);
     };
+
     useEffect(() => {
         findCourseById(courseId);
     }, [courseId]);

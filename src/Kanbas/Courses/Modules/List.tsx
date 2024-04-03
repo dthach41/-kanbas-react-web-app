@@ -12,41 +12,48 @@ import {
     setModules,
 } from "./reducer";
 import { KanbasState } from "../../store";
-import { findModulesForCourse } from "./client";
+import * as client from "./client";
 
 function ModuleList() {
     const { courseId } = useParams();
+
     const modulesList = modules.filter((module) => module.courseId === courseId);
     const [selectedModule, setSelectedModule] = useState(modulesList[0]);
-
-
-    // const module = useSelector((state: KanbasState) => { state.modulesReducer.module });
-
-    const tempMod = {
-        name: "New Module",
-        description: "New Description",
-        courseId: courseId,
-        _id: 0
-    }
-
-
+    
     const moduleList = useSelector((state: KanbasState) =>
         state.modulesReducer.modules);
 
     const module = useSelector((state: KanbasState) =>
         state.modulesReducer.module);
-    
+
     const dispatch = useDispatch();
 
     useEffect(() => {
-        findModulesForCourse(courseId + '')
+        client.findModulesForCourse(courseId + '')
             .then((modules) =>
                 dispatch(setModules(modules))
             );
     }, [courseId]);
 
+    const handleAddModule = () => {
+        client.createModule(courseId + '', module).then((module) => {
+            dispatch(addModule(module));
+        });
+    };
 
-    
+    const handleDeleteModule = (moduleId: string) => {
+        client.deleteModule(moduleId).then((status) => {
+            dispatch(deleteModule(moduleId));
+        });
+    };
+
+    const handleUpdateModule = async () => {
+        const status = await client.updateModule(module);
+        dispatch(updateModule(module));
+    };
+
+
+
     
 
     return (
@@ -67,8 +74,8 @@ function ModuleList() {
 
                 {/* Modules Editing Buttons */}
                 <div className="flex-buttons-container">
-                    <button className="btn add-button" onClick={() => dispatch(addModule({ ...module, courseId: courseId }))}>Add <FaPlus /> </button>
-                    <button className="btn add-button" onClick={() => dispatch(updateModule(module))}>Update <FaPen/> </button>
+                    <button className="btn add-button" onClick={handleAddModule}>Add <FaPlus /> </button>
+                    <button className="btn add-button" onClick={handleUpdateModule}>Update <FaPen/> </button>
 
                 </div>
 
@@ -104,7 +111,7 @@ function ModuleList() {
                                 {/* <FaCheckCircle className="text-success" />
                                 <FaPlusCircle className="ms-2" />
                                 <FaEllipsisV className="ms-2" /> */}
-                                <button className="module_small_btn ms-1" style={{color: 'red'}} onClick={() => dispatch(deleteModule(module._id))}><FaMinusCircle style={{marginBottom:'3px'}}/> </button>
+                                <button className="module_small_btn ms-1" style={{ color: 'red' }} onClick={() => handleDeleteModule(module._id)}><FaMinusCircle style={{marginBottom:'3px'}}/> </button>
                                 <button className="module_small_btn ms-2" onClick={() => dispatch(setModule(module))}> <FaPen style={{ marginBottom: '3px' }} /></button>
                             </span>
                         </div>
