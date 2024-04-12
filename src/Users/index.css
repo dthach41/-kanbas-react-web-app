@@ -1,0 +1,14 @@
+.btn.grey-button {
+    background-color: grey;
+    border-color: grey;
+    color: white;
+    margin-top: 10px
+}
+
+.btn.grey-button:hover {
+    border-color: black;
+}
+
+.profile-input {
+    margin-bottom: 10px;
+}
