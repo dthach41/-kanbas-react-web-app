@@ -8,8 +8,10 @@ import db from "../Database";
 
 function Dashboard({ courses, course, setCourse, addNewCourse,
     deleteCourse, updateCourse }: {
-        courses: any[]; course: any; setCourse: (course: any) => void;
-        addNewCourse: () => void; deleteCourse: (course: any) => void;
+        courses: any[]; course: any; 
+        setCourse: (course: any) => void;
+        addNewCourse: () => void;
+        deleteCourse: (course: any) => void;
         updateCourse: () => void;
     }) {
     
@@ -25,7 +27,6 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                 <button className="btn add-btn" onClick={addNewCourse} > Add <FaPlus /> </button>
                 <button className="btn add-btn" onClick={updateCourse} > Update </button>
 
-                
             </div>
 
             <input value={course.name} className="form-control course-add-menu-input" 
@@ -49,7 +50,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                                     <Link className="card-title" to={`/Kanbas/Courses/${course._id}`}
                                         style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
                                         <div className="course-info">{course.number + " " + course.name}</div> </Link>
-                                    <p className="card-text">{course.number + " " + course.startDate}</p>
+                                    <p className="card-text">{course.number + " " + (new Date(course.startDate).toLocaleDateString("en-US"))}</p>
                                     
                                     <Link to={`/Kanbas/Courses/${course._id}`} className="btn btn-primary"> Go </Link>
 
