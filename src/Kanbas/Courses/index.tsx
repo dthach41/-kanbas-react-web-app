@@ -10,6 +10,7 @@ import { FaGlasses, FaGreaterThan } from "react-icons/fa";
 import Assignments from "./Assignments";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Quizzes from "./Quizzes";
 
 function Courses() {
     
@@ -37,7 +38,7 @@ function Courses() {
     return (
         <div>
 
-            <div className="breadcrumb-nav-container">
+            <div className="breadcrumb-nav-container" style={{ color: "black" }}>
                     <div className="breadcrumb-nav-item btn"><HiMiniBars3 className="fs-2" /></div>
 
                 <h5 style={{ display: "flex", marginTop: "8px" }}>
@@ -69,6 +70,7 @@ function Courses() {
                         <Route path="Piazza" element={<a href="https://piazza.com/">Piazza</a>} />
                         <Route path="Assignments" element={<Assignments />} />
                         <Route path="Assignments/:assignmentId" element={<h1>Assignment Editor</h1>} />
+                        <Route path="Quizzes" element={<Quizzes/>} />
                         <Route path="Grades" element={<h1>Grades</h1>} />
                     </Routes>
                 </div>

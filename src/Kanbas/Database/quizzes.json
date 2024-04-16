@@ -1,0 +1,23 @@
+[
+    {
+        "_id": "1",
+        "courseId": "1",
+        "name": "Quiz 1",
+        "available": "2023-05-15", 
+        "due": "2023-05-15",
+        "points": "10",
+        "open": true,
+        "questions": [
+            {
+                "q": "What is 1 + 1",
+                "a": "2"
+            },
+            {
+                "q": "What is 4 + 3",
+                "a": "7"
+            }
+        ]
+    }
+
+
+]
