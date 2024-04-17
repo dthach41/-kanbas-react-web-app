@@ -2,22 +2,62 @@
     {
         "_id": "1",
         "courseId": "1",
-        "name": "Quiz 1",
+        "name": "CS4550 Quiz 1",
         "available": "2023-05-15", 
         "due": "2023-05-15",
         "points": "10",
         "open": true,
         "questions": [
             {
-                "q": "What is 1 + 1",
-                "a": "2"
+                "question": "What is 1 + 1",
+                "answer": "2"
             },
             {
-                "q": "What is 4 + 3",
-                "a": "7"
+                "question": "What is 4 + 3",
+                "answer": "7"
+            }
+        ]
+    },
+
+    {
+        "_id": "2",
+        "courseId": "1",
+        "name": "CS4550 Quiz 2",
+        "available": "2023-05-15",
+        "due": "2023-05-15",
+        "points": "5",
+        "open": true,
+        "questions": [
+            {
+                "question": "What does is CSS",
+                "answer": "Cascade Styling Sheet"
+            },
+            {
+                "question": "What is HTML",
+                "answer": "Hypertext Markup Language"
+            }
+        ]
+    },
+
+    {
+        "_id": "3",
+        "courseId": "2",
+        "name": "DS4300 Quiz 1",
+        "available": "2023-05-15",
+        "due": "2023-05-15",
+        "points": "10",
+        "open": true,
+        "questions": [
+            {
+                "question": "What does is SQL",
+                "answer": "Structured Query Language"
+            },
+            {
+                "question": "What is DB",
+                "answer": "Database"
             }
         ]
     }
 
-
+    
 ]

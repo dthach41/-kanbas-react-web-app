@@ -54,7 +54,7 @@ function Assignments() {
                     </span>
                   </span>
 
-                  <span className="float-end"> <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>
+                  <span className="float-end"> <FaCheckCircle className="text-success" /> <FaEllipsisV className="ms-2" /></span>
                 </span>
 
               </li>))}

@@ -1,12 +1,24 @@
 import "./index.css";
-import { FaEllipsisV, FaPlus, } from "react-icons/fa";
-import { quizzes } from "../../Database";
+import { FaCheckCircle, FaEllipsisV, FaPlus, FaRocket, } from "react-icons/fa";
 import { useParams } from "react-router";
+import * as client from "./client";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 function QuizzesList() {
     const { courseId } = useParams();
-    const quizList = quizzes.filter((quiz) => quiz.courseId == courseId);
+
+    const [quizList, setQuizList] = useState<client.Quiz[]>([]);
+
+    const fetchQuizzesForCourse = async (courseId?: string) => {
+        const quizzes = await client.findQuizzesForCourse(courseId);
+        setQuizList(quizzes);
+    };
+
+    useEffect(() => { fetchQuizzesForCourse(courseId); }, [courseId]);
+
+
 
     const defaultQuiz = {
         "courseId": courseId,
@@ -17,6 +29,10 @@ function QuizzesList() {
         "open": true,
         "questions": []
 }
+
+    const createQuiz = async () => {
+        
+    };
 
     return (
         <>
@@ -38,7 +54,21 @@ function QuizzesList() {
                     <ul className="list-group" >
                         {quizList.map((quiz) => (
                             <li className="list-group-item">
-                                {quiz.name}
+                                <span style={{ display: "flex", alignItems: "center" }}>
+                                    <span style={{marginRight:"10px"}}>
+                                        <FaRocket className="me-2" style={{color:'green'}}/>
+                                    </span>
+
+                                    <span style={{ marginRight: "auto" }}>
+                                        <Link to={'#'}>{quiz.name}</Link>
+                                        <br />
+                                        <span style={{ fontSize: "13px" }}>
+                                            Closed | <span style={{fontWeight:'bold'}}>Due </span>: {quiz.due + ''} | {quiz.points} pts | {quiz.questions.length} Questions
+                                        </span>
+                                    </span>
+                                    <span className="float-end"> <FaCheckCircle className="text-success" /> <FaEllipsisV className="ms-2" /></span>
+                                </span>
+
                             </li>
                         ))}
                     </ul>
