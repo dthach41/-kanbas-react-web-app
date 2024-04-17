@@ -1,8 +1,10 @@
 import axios from "axios";
+axios.defaults.withCredentials = true
+
 export const BASE_API = process.env.REACT_APP_BASE_API_URL;
 export const USERS_API = `${BASE_API}/api/users`;
 
-axios.defaults.withCredentials = true
+
 
 export interface User {
     _id: string; username: string; password: string; role: string;
