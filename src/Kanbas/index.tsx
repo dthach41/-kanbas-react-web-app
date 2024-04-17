@@ -15,7 +15,7 @@ function Kanbas() {
 
     const [courses, setCourses] = useState<any[]>([]);
 
-    const API_BASE = process.env.REACT_APP_API_BASE;
+    const API_BASE = process.env.REACT_APP_BASE_API_URL;
     const COURSES_API = `${API_BASE}/api/courses`;
 
 
