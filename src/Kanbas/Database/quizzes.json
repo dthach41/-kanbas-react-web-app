@@ -1,6 +1,5 @@
 [
     {
-        "_id": "1",
         "courseId": "1",
         "name": "CS4550 Quiz 1",
         "available": "2023-05-15", 
@@ -20,7 +19,6 @@
     },
 
     {
-        "_id": "2",
         "courseId": "1",
         "name": "CS4550 Quiz 2",
         "available": "2023-05-15",
@@ -40,7 +38,6 @@
     },
 
     {
-        "_id": "3",
         "courseId": "2",
         "name": "DS4300 Quiz 1",
         "available": "2023-05-15",

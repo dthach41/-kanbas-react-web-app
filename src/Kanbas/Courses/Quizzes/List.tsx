@@ -4,12 +4,13 @@ import { useParams } from "react-router";
 import * as client from "./client";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Quiz } from "./client";
 
 
 function QuizzesList() {
     const { courseId } = useParams();
 
-    const [quizList, setQuizList] = useState<client.Quiz[]>([]);
+    const [quizList, setQuizList] = useState<Quiz[]>([]);
 
     const fetchQuizzesForCourse = async (courseId?: string) => {
         const quizzes = await client.findQuizzesForCourse(courseId);
@@ -20,18 +21,24 @@ function QuizzesList() {
 
 
 
-    const defaultQuiz = {
-        "courseId": courseId,
-        "name": "New Quiz",
-        "available": "2023-05-15",
-        "due": "2023-05-15",
-        "points": "0",
-        "open": true,
-        "questions": []
-}
+    const defaultQuiz: Quiz = {
+        _id: "-1",
+        courseId: courseId + '',
+        name: "New Quiz",
+        available: "2024-05-15",
+        due: "2024-05-22",
+        points: "0",
+        open: false,
+        questions: []
+    }
 
-    const createQuiz = async () => {
-        
+    const addQuiz = async () => {
+        try {
+            const newUser = await client.addQuiz(defaultQuiz)
+            console.log(newUser)
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     return (
@@ -39,7 +46,7 @@ function QuizzesList() {
             <div className="flex-buttons-container" style={{ marginTop: "0px" }}>
                 <input placeholder=" Search for Quiz" style={{ marginRight: "auto" }} />
 
-                <div className="btn red-btn"><FaPlus /> Quiz</div>
+                <div className="btn red-btn" onClick={addQuiz}><FaPlus /> Quiz</div>
                 <div className="btn grey-btn"> <FaEllipsisV /> </div>
             </div>
 
