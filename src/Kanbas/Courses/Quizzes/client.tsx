@@ -25,13 +25,6 @@ export const findQuizzesForCourse = async (courseId?: string) => {
 };
 
 export const addQuiz = async (quiz: any) => {
-    try {
-        // Assuming QUIZZES_API is your backend API base URL
-        const response = await axios.post(`${QUIZZES_API}/addQuiz`, quiz);
-        return response.data;
-    } catch (error) {
-        // Handle errors (e.g., network errors, server errors)
-        console.error('Error adding quiz:', error);
-        throw error; // Rethrow the error to handle it in the calling code
-    }
+    const response = await axios.post(`${QUIZZES_API}/addQuiz`, quiz);
+    return response.data;
 };

@@ -17,12 +17,12 @@ function QuizzesList() {
         setQuizList(quizzes);
     };
 
-    useEffect(() => { fetchQuizzesForCourse(courseId); }, [courseId]);
+    useEffect(() => { fetchQuizzesForCourse(courseId); }, []);
 
 
 
     const defaultQuiz: Quiz = {
-        _id: "-1",
+        _id: "100",
         courseId: courseId + '',
         name: "New Quiz",
         available: "2024-05-15",
@@ -34,8 +34,9 @@ function QuizzesList() {
 
     const addQuiz = async () => {
         try {
-            const newUser = await client.addQuiz(defaultQuiz)
-            console.log(newUser)
+            const newQuiz = await client.addQuiz(defaultQuiz)
+            setQuizList([newQuiz, ...quizList])
+            console.log(newQuiz)
         } catch (err) {
             console.log(err);
         }
