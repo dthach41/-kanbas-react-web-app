@@ -11,12 +11,15 @@ import Assignments from "./Assignments";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Quizzes from "./Quizzes";
+import QuizDetails from "./Quizzes/quizDetails";
+import QuizDetailsEditor from "./Quizzes/quizDetailsEditor";
+
+
 
 function Courses() {
-    
+    const { pathname } = useLocation();
     const { courseId } = useParams();
     // const course = courses.find((course) => course._id === courseId);
-    const { pathname } = useLocation();
     const segments = pathname.split('/');
     const currentDirectory = segments[segments.length - 1];
 
@@ -35,6 +38,7 @@ function Courses() {
 
 
 
+
     return (
         <div>
 
@@ -42,7 +46,7 @@ function Courses() {
                     <div className="breadcrumb-nav-item btn"><HiMiniBars3 className="fs-2" /></div>
 
                 <h5 style={{ display: "flex", marginTop: "8px" }}>
-                    <span className="breadcrumb-nav-item">{course?.number} <FaGreaterThan className="fs-6" style={{ color: "black" }} /> {currentDirectory}</span>
+                    <span className="breadcrumb-nav-item">{course?.number} <FaGreaterThan className="fs-6" style={{ color: "black" }} /> {CreateBreadcrumbNav()}</span>
                 </h5>
 
                 <div className="btn modules-button d-none d-sm-block" style={{ marginLeft: "auto", marginRight: "15px" }}>
@@ -70,8 +74,10 @@ function Courses() {
                         <Route path="Piazza" element={<a href="https://piazza.com/">Piazza</a>} />
                         <Route path="Assignments" element={<Assignments />} />
                         <Route path="Assignments/:assignmentId" element={<h1>Assignment Editor</h1>} />
-                        <Route path="Quizzes" element={<Quizzes/>} />
                         <Route path="Grades" element={<h1>Grades</h1>} />
+                        <Route path="Quizzes" element={<Quizzes />} />
+                        <Route path="Quizzes/QuizDetails/:quizId" element={<QuizDetails />} />
+                        <Route path="Quizzes/QuizDetailsEditor/:quizId" element={<QuizDetailsEditor />} />
                     </Routes>
                 </div>
             </div>
@@ -83,3 +89,23 @@ function Courses() {
 }
 
 export default Courses;
+
+
+function CreateBreadcrumbNav() {
+    const { pathname } = useLocation();
+    let pathSegments = pathname.split("/").filter(segment => segment !== "").slice(3) // removes first 3 elements
+    // if there are 3 paths, then remove the id at the end
+    if (pathSegments.length >= 3) {
+        pathSegments = pathSegments.slice(0, -1)
+    }
+    let result = []
+
+    for (let i = 0; i < pathSegments.length; i++) {
+        result.push(
+            <span key={i}>{pathSegments[i]} {i < pathSegments.length - 1 && <FaGreaterThan className="fs-6" style={{ color: "black" }} />} </span>
+        );
+    }
+
+    return <span>{result}</span>
+
+}
