@@ -13,6 +13,7 @@ import axios from "axios";
 import Quizzes from "./Quizzes";
 import QuizDetails from "./Quizzes/quizDetails";
 import QuizDetailsEditor from "./Quizzes/quizDetailsEditor";
+import QuizQuestionsEditor from "./Quizzes/quizQuestionsEditor";
 
 
 
@@ -78,6 +79,7 @@ function Courses() {
                         <Route path="Quizzes" element={<Quizzes />} />
                         <Route path="Quizzes/QuizDetails/:quizId" element={<QuizDetails />} />
                         <Route path="Quizzes/QuizDetailsEditor/:quizId" element={<QuizDetailsEditor />} />
+                        <Route path="Quizzes/QuizQuestionsEditor/:quizId" element={<QuizQuestionsEditor />} />
                     </Routes>
                 </div>
             </div>
@@ -96,7 +98,7 @@ function CreateBreadcrumbNav() {
     let pathSegments = pathname.split("/").filter(segment => segment !== "").slice(3) // removes first 3 elements
     // if there are 3 paths, then remove the id at the end
     if (pathSegments.length >= 3) {
-        pathSegments = pathSegments.slice(0, -1)
+        pathSegments = pathSegments.slice(0, pathSegments.length - 1)
     }
     let result = []
 

@@ -30,12 +30,12 @@ const ContextMenu = ({ isOpen, onClose, quiz, quizFunctions }: { isOpen: boolean
 
                     <div className="context-menu-item"> <label>Available Date: </label> {quiz.available} </div>
                     <div className="context-menu-item"> <label>Due Date: </label> {quiz.due} </div>
-                    <div className="context-menu-item"> <label>Questions: </label> {quiz.questions.length} </div>
+                    <div className="context-menu-item"> <label>Questions: </label> {quiz.questions} </div>
                     <div className="context-menu-item"> <label>Published: </label> {quiz.published + ''} </div>
 
                     <div style={{ marginTop: '10px' }}>
                         <div onClick={() => { quizFunctions.deleteQuiz(); onClose(); }} className="btn btn-danger red-btn" style={{ marginRight: '7px' }}> Delete </div>
-                        <Link className="btn  grey-btn" to={'#'}> Edit </Link>
+                        <Link className="btn  grey-btn" to={'/Kanbas/Courses/' + quiz.courseId + '/Quizzes/QuizDetailsEditor/' + quiz._id}> Edit </Link>
                         <div onClick={ quizFunctions.publishQuiz } className="btn  grey-btn"> Publish </div>
                     </div>
 

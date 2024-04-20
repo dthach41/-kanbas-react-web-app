@@ -4,18 +4,22 @@ export const API_BASE = process.env.REACT_APP_BASE_API;
 export const QUIZZES_API = `${API_BASE}/api/quizzes`;
 
 
-interface Question {
+export interface Question {
+    _id: string;
+    quizId: string;
+    quizType: string;
     question: string;
-    answer: string;
+    answers: {_id: string, correct: boolean; answer: string }[];
 }
 
 export interface Quiz {
     _id: string, courseId: string; name: string; available: string;
-    due: string, points: string, open: boolean, questions: Question[],
-    published: boolean, assignmentGroup: string,
+    due: string, points: string, open: boolean, questions: number,
+    published: boolean, assignmentGroup: string, description: string,
     shuffleAnswers: boolean, timeLimit: string, multipleAttempts: boolean,
     showCorrectAnswers: boolean, accessCode: string, oneQuestionAtTime: boolean,
-    webcamRequired: boolean, lockQuestionsAfterAnswering: boolean, untilDate: string
+    webcamRequired: boolean, lockQuestionsAfterAnswering: boolean, untilDate: string,
+    quizType: string
 };
 
 export const findAllQuizzes = async () => {
@@ -50,4 +54,19 @@ export const updateUser = async (user: any) => {
 export const updateQuiz = async (quiz: Quiz) => {
     const response = await axios.put(`${QUIZZES_API}/${quiz._id}`, quiz);
     return response.data; 
+}
+
+export const findQuestionsForQuiz = async (quizId?: string) => {
+    const response = await axios.get(`${QUIZZES_API}/quizQuestions/${quizId}`);
+    return response.data;
+}
+
+export const addQuestion = async (question: Question) => {
+    const response = await axios.post(`${QUIZZES_API}/quizQuestions`, question)
+    return response.data;
+}
+
+export const updateQuestion = async (question: Question) => {
+    const response = await axios.put(`${QUIZZES_API}/quizQuestions/${question._id}`, question);
+    return response.data;
 }

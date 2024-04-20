@@ -6,33 +6,43 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Quiz } from "./client";
 import ContextMenu from "./contextMenu";
+import { useDispatch, useSelector } from "react-redux";
+import { KanbasState } from "../../store";
+
 
 
 function QuizzesList() {
     const { courseId } = useParams();
 
     const [quizList, setQuizList] = useState<Quiz[]>([]);
+    // const [quizList, setQuizList] = useSelector((state: KanbasState) => state.quizzesReducer.quizList)
+
+    const dispatch = useDispatch()
 
     const fetchQuizzesForCourse = async (courseId?: string) => {
-        const quizzes = await client.findQuizzesForCourse(courseId);
+        const quizzes = await client.findQuizzesForCourse(courseId)
         setQuizList(quizzes);
     };
 
     useEffect(() => { 
         fetchQuizzesForCourse(courseId);
+        
      }, []);
+
+    console.log(quizList)
 
 
     const defaultQuiz: Quiz = {
         _id: "100",
         courseId: courseId + '',
         name: "New Quiz",
+        description: "",
         assignmentGroup: "Quizzes",
         available: "2024-05-15",
         due: "2024-05-22",
         points: "0",
         open: false,
-        questions: [],
+        questions: 0,
         published: false,
         shuffleAnswers: true,
         timeLimit: "20",
@@ -43,6 +53,7 @@ function QuizzesList() {
         webcamRequired: false,
         lockQuestionsAfterAnswering: false,
         untilDate: "2024-05-22",
+        quizType: "Graded Quiz",
     };
 
     const addQuiz = async () => {
@@ -53,6 +64,7 @@ function QuizzesList() {
             console.log(err);
         }
     };
+
 
 
     // Handling the context menu --------------------------------------------------------
@@ -73,7 +85,7 @@ function QuizzesList() {
     const deleteQuiz = async () => {
         try {
             await client.deleteQuiz(contextMenuQuiz);
-            setQuizList(quizList.filter(quiz => quiz._id !== contextMenuQuiz._id));
+            setQuizList(quizList.filter((quiz: Quiz) => quiz._id !== contextMenuQuiz._id));
         } catch (err) {
             console.log(err);
         }
@@ -87,7 +99,7 @@ function QuizzesList() {
             await client.updateQuiz(quiz);
 
             setQuizList(
-                quizList.map((q) => {
+                quizList.map((q: Quiz) => {
                     if (q._id === quiz._id) {
                         return quiz;
                     }
@@ -102,6 +114,8 @@ function QuizzesList() {
 
 
     const quizFunctions = { deleteQuiz, publishQuiz: () => publishQuiz(contextMenuQuiz) }
+
+  
 
     return (
         <>
@@ -121,7 +135,7 @@ function QuizzesList() {
                     </div>
 
                     <ul className="list-group" >
-                        {quizList.map((quiz) => (
+                        {quizList.map((quiz: Quiz) => (
                             <li className="list-group-item" key={quiz._id}>
                                 <span style={{ display: "flex", alignItems: "center" }}>
                                     <span style={{marginRight:"10px"}}>
@@ -129,10 +143,10 @@ function QuizzesList() {
                                     </span>
 
                                     <span style={{ marginRight: "auto" }}>
-                                        <Link to={'/Kanbas/Courses/' + courseId + '/Quizzes/QuizDetails/' + quiz._id}>{quiz.name}</Link>
+                                        <Link to={'/Kanbas/Courses/' + courseId + '/Quizzes/QuizDetails/' + quiz._id} onClick={() => {console.log(quiz._id)}}>{quiz.name}</Link>
                                         <br />
                                         <span style={{ fontSize: "13px" }}>
-                                            {getQuizAvailablitiy(quiz) } | <span style={{fontWeight:'bold'}}>Due </span>: {quiz.due + ''} | {quiz.points} pts | {quiz.questions.length} Questions
+                                            {getQuizAvailablitiy(quiz) } | <span style={{fontWeight:'bold'}}>Due </span>: {quiz.due + ''} | {quiz.points} pts | {quiz.questions} Questions
                                         </span>
                                     </span>
                                     <span className="float-end"> 

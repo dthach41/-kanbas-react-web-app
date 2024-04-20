@@ -4,7 +4,6 @@ function add(a: number, b: number) {
     return a + b;
 }
 const twoPlusFour = add(2, 4);
-console.log(twoPlusFour);
 
 function AddedNums() {
     return (

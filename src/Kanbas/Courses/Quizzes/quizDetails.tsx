@@ -10,16 +10,19 @@ import { Link } from "react-router-dom";
 export default function QuizDetails() {
     const { quizId } = useParams();
 
+    //console.log(quizId)
+
     const [quiz, setQuiz] = useState<Quiz>({
         _id: "100",
         courseId: '',
         name: "New Quiz",
+        description: "",
         assignmentGroup: "Quizzes",
         available: "2024-05-15",
         due: "2024-05-22",
         points: "0",
         open: false,
-        questions: [],
+        questions: 0,
         published: false,
         shuffleAnswers: true,
         timeLimit: "20",
@@ -30,6 +33,7 @@ export default function QuizDetails() {
         webcamRequired: false,
         lockQuestionsAfterAnswering: false,
         untilDate: "2024-05-22",
+        quizType: "Graded Quiz",
     })
 
     const fetchQuiz = async () => {
@@ -78,10 +82,13 @@ export default function QuizDetails() {
 
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <div>
-                    <label className="detailLabel">Quiz Type: </label> {quiz.assignmentGroup}
+                    <label className="detailLabel">Quiz Name: </label> {quiz.name}
                 </div>
                 <div>
-                    <label className="detailLabel">Points: </label> {quiz.points}
+                    <label className="detailLabel">Quiz Type: </label> {quiz.quizType}
+                </div>
+                <div>
+                    <label className="detailLabel">Points: </label> {quiz.points + ''}
                 </div>
                 <div>
                     <label className="detailLabel">Assignment Group: </label> {quiz.assignmentGroup}
@@ -136,7 +143,7 @@ function boolToString(bool: boolean) {
     } else {
         return (
             <>
-                No
+            No
             </>
         )
     }

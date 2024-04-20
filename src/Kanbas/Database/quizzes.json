@@ -6,16 +6,7 @@
         "due": "2023-05-15",
         "points": "10",
         "open": true,
-        "questions": [
-            {
-                "question": "What is 1 + 1",
-                "answer": "2"
-            },
-            {
-                "question": "What is 4 + 3",
-                "answer": "7"
-            }
-        ]
+        "questions": 2
     },
 
     {
@@ -25,16 +16,7 @@
         "due": "2023-05-15",
         "points": "5",
         "open": true,
-        "questions": [
-            {
-                "question": "What does is CSS",
-                "answer": "Cascade Styling Sheet"
-            },
-            {
-                "question": "What is HTML",
-                "answer": "Hypertext Markup Language"
-            }
-        ]
+        "questions": 2
     },
 
     {
@@ -44,16 +26,7 @@
         "due": "2023-05-15",
         "points": "10",
         "open": true,
-        "questions": [
-            {
-                "question": "What does is SQL",
-                "answer": "Structured Query Language"
-            },
-            {
-                "question": "What is DB",
-                "answer": "Database"
-            }
-        ]
+        "questions": 2
     }
 
     
