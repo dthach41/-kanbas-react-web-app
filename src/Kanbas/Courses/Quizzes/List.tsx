@@ -6,8 +6,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Quiz } from "./client";
 import ContextMenu from "./contextMenu";
-import { useDispatch, useSelector } from "react-redux";
-import { KanbasState } from "../../store";
 
 
 
@@ -17,7 +15,7 @@ function QuizzesList() {
     const [quizList, setQuizList] = useState<Quiz[]>([]);
     // const [quizList, setQuizList] = useSelector((state: KanbasState) => state.quizzesReducer.quizList)
 
-    const dispatch = useDispatch()
+
 
     const fetchQuizzesForCourse = async (courseId?: string) => {
         const quizzes = await client.findQuizzesForCourse(courseId)
@@ -29,7 +27,6 @@ function QuizzesList() {
         
      }, []);
 
-    console.log(quizList)
 
 
     const defaultQuiz: Quiz = {
@@ -143,7 +140,7 @@ function QuizzesList() {
                                     </span>
 
                                     <span style={{ marginRight: "auto" }}>
-                                        <Link to={'/Kanbas/Courses/' + courseId + '/Quizzes/QuizDetails/' + quiz._id} onClick={() => {console.log(quiz._id)}}>{quiz.name}</Link>
+                                        <Link to={'/Kanbas/Courses/' + courseId + '/Quizzes/QuizDetails/' + quiz._id}>{quiz.name}</Link>
                                         <br />
                                         <span style={{ fontSize: "13px" }}>
                                             {getQuizAvailablitiy(quiz) } | <span style={{fontWeight:'bold'}}>Due </span>: {quiz.due + ''} | {quiz.points} pts | {quiz.questions} Questions

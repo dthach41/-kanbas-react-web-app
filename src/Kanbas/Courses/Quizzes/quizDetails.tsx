@@ -10,8 +10,6 @@ import { Link } from "react-router-dom";
 export default function QuizDetails() {
     const { quizId } = useParams();
 
-    //console.log(quizId)
-
     const [quiz, setQuiz] = useState<Quiz>({
         _id: "100",
         courseId: '',
@@ -73,7 +71,7 @@ export default function QuizDetails() {
                     </div>
                     
                 )}
-            <div className="btn modules-button"> Preview </div>
+            <Link to={'/Kanbas/Courses/' + quiz.courseId + "/Quizzes/QuizPreview/" + quizId} className="btn modules-button"> Preview </Link>
             <Link to={'/Kanbas/Courses/' + quiz.courseId + "/Quizzes/QuizDetailsEditor/" + quizId} className="btn modules-button"> <FaPen/> Edit </Link>
             <div className="btn modules-button"> <FaEllipsisV/> </div>
         </div>

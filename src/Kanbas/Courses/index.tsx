@@ -14,6 +14,7 @@ import Quizzes from "./Quizzes";
 import QuizDetails from "./Quizzes/quizDetails";
 import QuizDetailsEditor from "./Quizzes/quizDetailsEditor";
 import QuizQuestionsEditor from "./Quizzes/quizQuestionsEditor";
+import QuizPreview from "./Quizzes/quizPreview";
 
 
 
@@ -80,6 +81,7 @@ function Courses() {
                         <Route path="Quizzes/QuizDetails/:quizId" element={<QuizDetails />} />
                         <Route path="Quizzes/QuizDetailsEditor/:quizId" element={<QuizDetailsEditor />} />
                         <Route path="Quizzes/QuizQuestionsEditor/:quizId" element={<QuizQuestionsEditor />} />
+                        <Route path="Quizzes/QuizPreview/:quizId" element={<QuizPreview />} />
                     </Routes>
                 </div>
             </div>
