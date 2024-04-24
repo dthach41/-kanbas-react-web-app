@@ -24,7 +24,7 @@ const ContextMenu = ({ isOpen, onClose, quiz, quizFunctions }: { isOpen: boolean
                 <FaTimesCircle onClick={onClose} style={{ color: 'red', marginBottom:'10px'}} className="red-btn" />
 
                 <div>
-                    <div style={{ fontWeight: 'bold' }}>{quiz.name} {quiz._id}</div>
+                    <div style={{ fontWeight: 'bold' }}>{quiz.name}</div>
 
                     <hr/>
 

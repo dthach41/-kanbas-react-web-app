@@ -7,7 +7,8 @@ export const QUIZZES_API = `${API_BASE}/api/quizzes`;
 export interface Question {
     _id: string;
     quizId: string;
-    quizType: string;
+    points: number;
+    questionType: string;
     question: string;
     answers: {_id: string, correct: boolean; answer: string }[];
 }
@@ -43,8 +44,7 @@ export const addQuiz = async (quiz: any) => {
 };
 
 export const deleteQuiz = async (quiz: any) => {
-    const response = await axios.delete(
-        `${QUIZZES_API}/${quiz._id}`);
+    const response = await axios.delete(`${QUIZZES_API}/${quiz._id}`);
     return response.data;
 }
 
@@ -68,5 +68,10 @@ export const addQuestion = async (question: Question) => {
 
 export const updateQuestion = async (question: Question) => {
     const response = await axios.put(`${QUIZZES_API}/quizQuestions/${question._id}`, question);
+    return response.data;
+}
+
+export const deleteQuestion = async (question: any) => {
+    const response = await axios.delete(`${QUIZZES_API}/quizQuestions/${question._id}`);
     return response.data;
 }
