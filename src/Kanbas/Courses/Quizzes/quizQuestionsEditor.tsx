@@ -366,6 +366,7 @@ function displayTrueFalse({ qu, questionIndex, deleteAnswer, handleChangeQuestio
         newAnswers[index] = newAnswer;
         const newQuestion = { ...qu, answers: newAnswers }
         handleChangeQuestions(questionIndex, newQuestion)
+        console.log(newAnswer.answer)
     }
 
 
@@ -379,8 +380,7 @@ function displayTrueFalse({ qu, questionIndex, deleteAnswer, handleChangeQuestio
                     <label className="quiz-prop"> Answer: </label>
                     <select className="quiz-prop"
                         onChange={(e) => {
-                            console.log(e.target.value)
-                            const newAnswer = { ...answer, answer: e.target.value }
+                            const newAnswer = { ...answer, correct: true, answer: e.target.value + '' }
                             handleChangeAnswers(i, newAnswer)
                         }}>
                         <option value="true" selected={answer.answer === "true" || answer.answer === "New Answer"}>True</option>
