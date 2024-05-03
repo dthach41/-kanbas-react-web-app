@@ -80,9 +80,6 @@ export default function Profile() {
                     <button onClick={signout} className="btn btn-danger">
                         Signout
                     </button>
-
-                    
-
                     
                 </div>
             )}

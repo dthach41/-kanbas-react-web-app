@@ -1,0 +1,32 @@
+[
+    {
+        "quizId": "1",
+        "question": "What is 1 + 1",
+        "answer": "2"
+    },
+    {
+        "quizId": "1",
+        "question": "What is 4 + 3",
+        "answer": "7"
+    },
+    {
+        "quizId": "2",
+        "question": "What does is CSS",
+        "answer": "Cascade Styling Sheet"
+    },
+    {
+        "quizId": "2",
+        "question": "What is HTML",
+        "answer": "Hypertext Markup Language"
+    },
+    {
+        "quizId": "3",
+        "question": "What does is SQL",
+        "answer": "Structured Query Language"
+    },
+    {
+        "quizId": "3",
+        "question": "What is DB",
+        "answer": "Database"
+    }
+]

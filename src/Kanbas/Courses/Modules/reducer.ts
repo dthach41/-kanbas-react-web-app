@@ -40,10 +40,6 @@ const modulesSlice = createSlice({
         setModules: (state, action) => {
             state.modules = action.payload;
         },
-
-        
-
-
     },
 });
 

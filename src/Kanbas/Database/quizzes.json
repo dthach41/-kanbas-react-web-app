@@ -1,0 +1,33 @@
+[
+    {
+        "courseId": "1",
+        "name": "CS4550 Quiz 1",
+        "available": "2023-05-15", 
+        "due": "2023-05-15",
+        "points": "10",
+        "open": true,
+        "questions": 2
+    },
+
+    {
+        "courseId": "1",
+        "name": "CS4550 Quiz 2",
+        "available": "2023-05-15",
+        "due": "2023-05-15",
+        "points": "5",
+        "open": true,
+        "questions": 2
+    },
+
+    {
+        "courseId": "2",
+        "name": "DS4300 Quiz 1",
+        "available": "2023-05-15",
+        "due": "2023-05-15",
+        "points": "10",
+        "open": true,
+        "questions": 2
+    }
+
+    
+]
